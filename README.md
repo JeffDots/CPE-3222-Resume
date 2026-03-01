@@ -1,2 +1,2 @@
-# CPE-3222-Resume-
+# CPE-3222-Resume
 Public Repository for viewing my resume
