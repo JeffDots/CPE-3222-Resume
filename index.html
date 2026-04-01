@@ -1,135 +1,192 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeff's Resume</title>
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class = "resume-container">
-        <div class = "sidebar">
-            <div class = "profile-image">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <div class="resume-container">
+        <div class="sidebar">
+            <div class="profile-image">
                 <img src="JeffRecent.jpg" alt="Jeff Thomas V. Dotillos">
             </div>
-            <div class = "profile-name">Jeff Thomas V. Dotillos</div>
-            <div class = "profile-title">Full Stack Developer</div>
+            <div class="profile-name">Jeff Thomas V. Dotillos</div>
+            <div class="profile-title">Full Stack Developer ||</div>
 
             <h2>Contact Info</h2>
-            <div class = "info-item">
+            <div class="info-item">
                 <strong>Email📧</strong>
-                jefftdots@email.com
+                <span class="copyable" data-copy="jefftdots@email.com">
+                    jefftdots@email.com
+                    <button class="copy-btn" aria-label="Copy email">📋</button>
+                </span>
             </div>
-             <div class = "info-item">
+            <div class="info-item">
                 <strong>Github🤖</strong>
-                github.com/JeffDots
+                <span class="copyable" data-copy="github.com/JeffDots">
+                    github.com/JeffDots
+                    <button class="copy-btn" aria-label="Copy GitHub">📋</button>
+                </span>
             </div>
-            <div class = "info-item">
+            <div class="info-item">
                 <strong>Phone no📱</strong>
-                09089717820
+                <span class="copyable" data-copy="09089717820">
+                    09089717820
+                    <button class="copy-btn" aria-label="Copy phone">📋</button>
+                </span>
             </div>
-            <div class = "info-item">
+            <div class="info-item">
                 <strong>Address 📍</strong>
                 Philippines Cebu City
             </div>
 
             <h2>Skills</h2>
-            <ul class = "skills-list">
+            <ul class="skills-list">
                 <li>
                     HTML/CSS
-                    <div class = "skill-bar">
-                        <div class = "skill-progress" style="width: 60%;"></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="60"></div>
+                        <span class="skill-percentage">60%</span>
                     </div>
                 </li>
                 <li>
                     JavaScript
-                    <div class = "skill-bar">
-                        <div class = "skill-progress" style="width: 75%;"></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                        <span class="skill-percentage">75%</span>
                     </div>
                 </li>
                 <li>
                     Python
-                    <div class = "skill-bar">
-                        <div class = "skill-progress" style="width: 70%;"></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                        <span class="skill-percentage">70%</span>
                     </div>
                 </li>
                 <li>
                     React
-                    <div class = "skill-bar">
-                        <div class = "skill-progress" style="width: 75%;"></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                        <span class="skill-percentage">75%</span>
                     </div>
                 </li>
-                                
                 <li>
                     JAVA
-                    <div class = "skill-bar">
-                        <div class = "skill-progress" style="width: 85%;"></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                        <span class="skill-percentage">85%</span>
                     </div>
                 </li>
-                 <li>
+                <li>
                     C
-                    <div class = "skill-bar">
-                        <div class = "skill-progress" style="width: 80%;"></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                        <span class="skill-percentage">80%</span>
                     </div>
                 </li>
             </ul>
             <h2>Languages</h2>
-            <ul class = "language-list">
+            <ul class="language-list">
                 <li>English - Fluent</li>
                 <li>Filipino - Native</li>
             </ul>
+
+            <!-- Quick Stats -->
+            <h2>Quick Stats</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-label">Skills</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Years Study</div>
+                </div>
+            </div>
         </div>
 
-        <div class = "main-content">
+        <div class="main-content">
             <h1>Jeff Thomas V. Dotillos</h1>
-            <p class = "subtitle">Full Stack Developer | Web Enthusiast</p>
-            <p class="instruction-link"><a href="experience.html">Experiences</a></p>
+            <p class="subtitle">Full Stack Developer | Web Enthusiast</p>
             
-            <div class = "section"> 
-                <h2 class = "section-title">Projects</h2>
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="java">JAVA</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div>
 
-                <div class = "project-item">
-                    <div class = "item-header">
+            <div class="section"> 
+                <h2 class="section-title">Projects</h2>
+
+                <div class="project-item" data-category="python web" data-aos="fade-up">
+                    <div class="item-header">
                         <div>
-                            <div class = "item-title">Extrapolation Project using Egg prices here in the Philippines</div>
-                        
+                            <div class="item-title">Extrapolation Project using Egg prices here in the Philippines</div>
                         </div>
-                        <div class = "item-date"> November 2025</div>      
+                        <div class="item-date">November 2025</div>      
                     </div>
                     <div class="item-description">
-                        Created a project that predict the increasing of egg prices using multiple Extrapolation algorithm in Phyton 
+                        Created a project that predict the increasing of egg prices using multiple Extrapolation algorithm in Python 
                         it will show a rough estimate using data from 2023 to 2025
                         <ul>
                             <li>Web based implementation using HTML</li>
-                            <li>Created the algorthim using Python</li>
+                            <li>Created the algorithm using Python</li>
                         </ul>
+                    </div>
+                    <button class="expand-btn">Read More</button>
+                    <div class="expanded-content">
+                        <p><strong>Technologies:</strong> Python, HTML, Data Analysis</p>
+                        <p><strong>Key Features:</strong> Predictive modeling, data visualization, trend analysis</p>
+                    </div>
                 </div>
-            </div>
 
-               <div class = "project-item">
-                    <div class = "item-header">
+                <div class="project-item" data-category="java web" data-aos="fade-up">
+                    <div class="item-header">
                         <div>
-                            <div class = "item-title">Warehouse Inventory Management System</div>
-                        
+                            <div class="item-title">Warehouse Inventory Management System</div>
                         </div>
-                        <div class = "item-date"> May 2025</div>      
+                        <div class="item-date">May 2025</div>      
                     </div>
                     <div class="item-description">
-                        Created a web based application that can help track and manage invetory of a stakeholder. It has tracking system
+                        Created a web based application that can help track and manage inventory of a stakeholder. It has tracking system
                         of the quantity and state of the product, setting warehouse location, and specialize UI for owner and clerk
-
                         <ul>
                             <li>Web based implementation using HTML, CSS, and Javascript</li>
                             <li>Created the main algorithm of the system using JAVA</li>
                         </ul>
+                    </div>
+                    <button class="expand-btn">Read More</button>
+                    <div class="expanded-content">
+                        <p><strong>Technologies:</strong> JAVA, HTML, CSS, JavaScript</p>
+                        <p><strong>Key Features:</strong> Real-time inventory tracking, multi-user authentication, warehouse management</p>
+                    </div>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Education</h2>
-
-                <div class="education-item">
+                <div class="education-item" data-aos="fade-up">
                     <div class="item-header">
                         <div>
                             <div class="item-title">Bachelor of Science in Computer Engineering</div>
@@ -142,17 +199,35 @@
 
             <div class="section">
                 <h2 class="section-title">Certifications</h2>
-                <div class="experience-item">
+                <div class="experience-item" data-aos="fade-up">
                     <div class="item-description">
                         <ul>
-                            <li>Global AI Healthcare Convergence Capstone Participation Certificate (2025)</li>
+                            <li>Global AI Healthcare Convergence Capstone Participation Certificate (2026)</li>
                             <li>Senior Highschool with Honors Certification from CIC-CEBU (2023)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
+            <div class = "section">
+                <h2 class="section-title">Conferences</h2>
+                <div class-="experience-item" data-aos="fade-up">
+                    <div class="item-description">
+                        <ul>
+                            <li>Global AI Healthcare Convergence (2026)</li>
+                            <li>RACETCCON (2026)</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <a href="experience.html" class="floating-experience-btn">Experience</a>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
