@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </button>
+
     <div class="resume-container no-sidebar">
         <div class="main-content">
             <div class="section">
@@ -81,7 +87,10 @@
         <!-- <p class="instruction-link"><a href="index.html">Back to Resume</a></p> -->
          <a href="index.html" class="floating-experience-btn">Back to Resume</a>
     </div>
-    <!-- <script src="script.js"></script> -->
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
